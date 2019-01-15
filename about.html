@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My first Bulma website</title>
+    <title>About</title>
     <link rel="stylesheet" href="css/main.css">
   </head>
 
@@ -19,25 +19,30 @@
           <a href="index.html" class="navbar-item">
             <img src="./img/positivelylogo.jpg" alt="" width="200" height="150px">
           </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-        <div class="navbar-menu is-active">
+        <div class="navbar-menu" id="navMenu">
 
           <div class="navbar-start">
-            <h1 class="navbar-item title is-2">
+            <a href="./About.html" class="navbar-item title is-2">
               About
-            </h1>
+            </a>
           </div>
 
           <div class="navbar-"></div>
 
           <div class="navbar-end">
-            <a href="index.html" class="navbar-item">
+            <a href="./index.html" class="navbar-item">
               Home
             </a>
-            <a href="blog.html" class="navbar-item">
+            <a href="./blog.html" class="navbar-item">
               Blog
             </a>
-            <a href="shop.html" class="navbar-item">
+            <a href="./shop.html" class="navbar-item">
               Shop
             </a>
           </div>
@@ -66,6 +71,33 @@
         </div>
       </section>
     </div>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+    </script>
 
 
   </body>
